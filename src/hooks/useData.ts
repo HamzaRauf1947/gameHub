@@ -26,6 +26,7 @@ const [data, setData] = useState<T[]>([]);
                 if (err instanceof CanceledError) return;
                 setError(err.message)
             })
+      
 
         return () => controller.abort();
     }, [])
