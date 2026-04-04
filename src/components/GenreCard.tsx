@@ -12,7 +12,7 @@ const GenreCard = ({genre,onSelectGenre,selectedGenre}:Props) => {
     <ListItem key={genre.id}  paddingY='5px'>
               <HStack>
                 <Image boxSize='42px' borderRadius={8} src={getCroppedImageUrl(genre.image_background)}/>
-                <Button onClick={()=> onSelectGenre(genre)} variant='link' fontSize='lg' fontWeight='semibold' >{genre.name} </Button>
+                <Button fontWeight={genre.id === selectedGenre?.id ?'bold':'normal'} onClick={()=> onSelectGenre(genre)} variant='link' fontSize='lg'  >{genre.name} </Button>
               </HStack>
     </ListItem>
   )
