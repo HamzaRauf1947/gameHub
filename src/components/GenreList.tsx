@@ -1,7 +1,5 @@
-import { Heading, HStack, Image, List, ListItem, Skeleton, Spinner, Text } from "@chakra-ui/react"
+import { Heading, List } from "@chakra-ui/react"
 import useGenre, { Genre } from "../hooks/useGenre"
-import getCroppedImageUrl from "../services/image-url"
-import { wrap } from "framer-motion"
 import GenreCard from "./GenreCard"
 import GenreListSkeleton from "./GenreListSkeleton"
 
