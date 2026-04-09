@@ -9,10 +9,15 @@ interface Props {
 }
 const GenreCard = ({ genre, onSelectGenre, selectedGenre }: Props) => {
   return (
+
+ 
     <ListItem key={genre.id} paddingY='5px'>
       <HStack>
-        <Image boxSize='42px' borderRadius={8} src={getCroppedImageUrl(genre.image_background)} />
-        <Button fontWeight={genre.id === selectedGenre?.id ? 'bold' : 'normal'}
+        <Image objectFit='cover' boxSize='42px' borderRadius={8} src={getCroppedImageUrl(genre.image_background)} />
+        <Button 
+        whiteSpace='normal' 
+        textAlign='left'
+        fontWeight={genre.id === selectedGenre?.id ? 'bold' : 'normal'}
           onClick={() => onSelectGenre(genre)}
           variant='link'
           fontSize='lg'>
@@ -20,6 +25,7 @@ const GenreCard = ({ genre, onSelectGenre, selectedGenre }: Props) => {
         </Button>
       </HStack>
     </ListItem>
+
   )
 }
 
