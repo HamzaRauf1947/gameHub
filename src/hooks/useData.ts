@@ -3,7 +3,7 @@ import apiClient from "../services/api-client";
 import { AxiosRequestConfig, CanceledError } from "axios";
 
 
-interface FetchResponse<T>{
+export interface FetchResponse<T>{
     count:number;
     results:T[];
 }
@@ -32,8 +32,7 @@ const [data, setData] = useState<T[]>([]);
     }, deps?[...deps]:[])
 
     return {data, error ,isloading}
-   
-  
+
 }
 
 export default useData;

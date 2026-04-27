@@ -8,14 +8,14 @@ interface Props {
   selectedGenre: Genre | null;
 }
 const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
-  const { data, isloading } = useGenre();
+  const { data, isLoading } = useGenre();
   const skeltons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
   return (
     <>
       <Heading as='h1' fontSize='2xl' marginBottom={3}>Genre</Heading>
       <List>
-        {isloading && skeltons.map((skl) => <GenreListSkeleton key={skl} />)}
-        {data.map(genre => <GenreCard
+        {isLoading && skeltons.map((skl) => <GenreListSkeleton key={skl} />)}
+        {data?.results.map(genre => <GenreCard
           key={genre.id}
           genre={genre}
           onSelectGenre={onSelectGenre}
