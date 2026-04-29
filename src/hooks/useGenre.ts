@@ -16,7 +16,7 @@ export const useGenre =()=>  useQuery({
     queryKey:['genres'],
     queryFn:apiClient.getAll,
     staleTime:24*60*60*1000,  //24 hour
-    initialData:{count:genres.data.length , results:genres.data}
+    initialData:{next:null,count:genres.data.length , results:genres.data}
 })
 
 
