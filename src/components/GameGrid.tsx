@@ -12,18 +12,18 @@ interface Props{
 }
 const GameGrid = ({gameQuery}:Props) => {
 
-  const { data, error, isloading } = useGames(gameQuery);
+  const { data, error, isLoading } = useGames(gameQuery);
   const skeletons: number[] = [1, 2, 3, 4, 5, 6,7,8,9,10,11,12,13];
 
   return (
     <>
-      {error && <Text color='red'>{error}</Text>}
+      {error && <Text color='red'>{error.message}</Text>}
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing={6}>
-        {isloading && skeletons.map(skelton =>
+        {isLoading && skeletons.map(skelton =>
           <GameCardContainer key={skelton}>
             <GameCardSkeleton />
           </GameCardContainer>)}
-        {!isloading && data.map(game =>
+        {!isLoading && data?.results.map(game =>
            <GameCardContainer key={game.id}>
              <GameCard game={game}  />
            </GameCardContainer>
