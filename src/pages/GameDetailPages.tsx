@@ -3,6 +3,7 @@ import useGame from "../hooks/useGame";
 import { Heading, Spinner } from "@chakra-ui/react";
 import ExpandableText from "../components/ExpandableText";
 import GameAttribute from "../components/GameAttribute";
+import GameTrailer from "../components/GameTrailer";
 
 const GameDetailPages = () => {
   const { slug } = useParams();
@@ -15,6 +16,7 @@ const GameDetailPages = () => {
       <Heading>{game.name}</Heading>
       <ExpandableText>{game.description_raw}</ExpandableText>
       <GameAttribute game={game}/>
+      <GameTrailer gameId={game.id} />
     </>
   );
 };
