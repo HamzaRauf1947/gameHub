@@ -27,7 +27,7 @@ const GenreDrawer = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Genres</DrawerHeader>
+          
           <DrawerBody>
             <GenreList  />
           </DrawerBody>

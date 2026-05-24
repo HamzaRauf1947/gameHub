@@ -5,14 +5,12 @@ import { Box } from '@chakra-ui/react'
 
 const Layout = () => {
   return (
-    <>
-        <Navbar/>
-        <Box padding={5}>
-          <Outlet/>
-        </Box>
-        
-    
-    </>
+     <Box overflowX="hidden">       
+      <Navbar />
+      <Box padding={{ base: 2, md: 5 }}> 
+        <Outlet />
+      </Box>
+    </Box>
   )
 }
 

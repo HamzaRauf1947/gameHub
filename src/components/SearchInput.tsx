@@ -11,7 +11,9 @@ const SearchInput = () => {
     const setSearchText = useGameQueryStore(s=>s.setSearchText);
     const navigate = useNavigate();
   return (
- <form onSubmit={(event)=>{
+ <form 
+  style={{ width: "100%",flex:1 }}
+ onSubmit={(event)=>{
     event.preventDefault();
     if(ref.current){
        setSearchText(ref.current.value);
@@ -21,7 +23,12 @@ const SearchInput = () => {
  }}>
        <InputGroup>
     <InputLeftElement children={<BsSearch/>}/>
-    <Input ref={ref} borderRadius={20} placeholder="Search games..." variant='filled'/>
+    <Input ref={ref}
+     borderRadius={20}
+      placeholder="Search games..."
+       variant='filled'
+       fontSize={{ base: 'sm', md: 'md' }} 
+       />
     
     </InputGroup>
  </form>

@@ -10,6 +10,7 @@ interface Props {
 const GenreCard = ({ genre }:Props) => {
   const selectedGenreId = useGameQueryStore(s=>s.gameQuery.genreId);
   const setSelectedGenreId = useGameQueryStore(s=>s.setGenreId);
+  const isDrawerOpen = useGameQueryStore(s => s.isDrawerOpen);
    const closeDrawer = useGameQueryStore(s => s.closeDrawer);
   return (
 
@@ -23,7 +24,7 @@ const GenreCard = ({ genre }:Props) => {
         fontWeight={genre.id === selectedGenreId ? 'bold' : 'normal'}
           onClick={() => {
             setSelectedGenreId(genre.id);
-           closeDrawer();
+            if (isDrawerOpen) closeDrawer();
           }
           }
           variant='link'

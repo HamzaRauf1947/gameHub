@@ -9,7 +9,7 @@ const GenreList = () => {
   const skeltons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
   return (
     <>
-      <Heading display={{ base: "none", lg: "block" }}  as='h1' fontSize='2xl' marginBottom={3}>Genre</Heading>
+      <Heading   as='h1' fontSize='2xl' marginBottom={3}>Genre</Heading>
       <List>
         {isLoading && skeltons.map((skl) => <GenreListSkeleton key={skl} />)}
         {data?.results.map(genre => <GenreCard

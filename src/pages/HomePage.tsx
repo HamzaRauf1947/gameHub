@@ -1,4 +1,4 @@
-import { Grid, Show, GridItem, HStack } from '@chakra-ui/react'
+import { Grid, Show, GridItem, HStack, SimpleGrid } from '@chakra-ui/react'
 import GameGrid from '../components/GameGrid'
 import GameHeading from '../components/GameHeading'
 import GenreList from '../components/GenreList'
@@ -23,18 +23,29 @@ const HomePage = () => {
           <GenreList />
         </GridItem>
       </Show>
-      <GridItem area='main' padding={4}>
-        <GameHeading />
-        <HStack spacing={5} marginBottom={5}>
-             <Show below="lg">
-            <GenreDrawer /> 
-          </Show>
-          <PlatformSelector />
-            <SortSelector
-             />
-        </HStack>
-        <GameGrid />
-      </GridItem>
+      
+
+      <GridItem area='main' paddingX={{ base: 0, md: 4 }} paddingY={4}>
+  <GameHeading />
+
+  
+  <Show below="lg">
+    <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={3} marginBottom={5}>
+      <GenreDrawer />
+      <PlatformSelector />
+      <SortSelector />
+    </SimpleGrid>
+  </Show>
+
+  <Show above="lg">
+    <HStack spacing={5} marginBottom={5}>
+      <PlatformSelector />
+      <SortSelector />
+    </HStack>
+  </Show>
+
+  <GameGrid />
+</GridItem>
 
     </Grid>
   )
