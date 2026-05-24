@@ -5,10 +5,12 @@ import useGameQueryStore from "../store";
 
 interface Props {
   genre: Genre;
+ 
 }
-const GenreCard = ({ genre}:Props) => {
+const GenreCard = ({ genre }:Props) => {
   const selectedGenreId = useGameQueryStore(s=>s.gameQuery.genreId);
-  const setSelectedGenreId = useGameQueryStore(s=>s.setGenreId)
+  const setSelectedGenreId = useGameQueryStore(s=>s.setGenreId);
+   const closeDrawer = useGameQueryStore(s => s.closeDrawer);
   return (
 
  
@@ -19,7 +21,11 @@ const GenreCard = ({ genre}:Props) => {
         whiteSpace='normal' 
         textAlign='left'
         fontWeight={genre.id === selectedGenreId ? 'bold' : 'normal'}
-          onClick={() => setSelectedGenreId(genre.id)}
+          onClick={() => {
+            setSelectedGenreId(genre.id);
+           closeDrawer();
+          }
+          }
           variant='link'
           fontSize='lg'>
           {genre.name}

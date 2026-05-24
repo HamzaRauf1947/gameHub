@@ -4,6 +4,7 @@ import GameHeading from '../components/GameHeading'
 import GenreList from '../components/GenreList'
 import PlatformSelector from '../components/PlatformSelector'
 import SortSelector from '../components/SortSelector'
+import GenreDrawer from '../components/GenreDrawer '
 
 const HomePage = () => {
   return (
@@ -25,6 +26,9 @@ const HomePage = () => {
       <GridItem area='main' padding={4}>
         <GameHeading />
         <HStack spacing={5} marginBottom={5}>
+             <Show below="lg">
+            <GenreDrawer /> 
+          </Show>
           <PlatformSelector />
             <SortSelector
              />
@@ -36,4 +40,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default HomePage;
